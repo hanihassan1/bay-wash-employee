@@ -1,0 +1,65 @@
+{% extends 'base.html' %} {% block head %}
+<script src="{{ url_for('static', filename='js/main.js')  }}"></script>
+
+{% endblock %} {% block content %}
+<div class="container-flud">
+    <div class="row no-gutters">
+
+        <div class="col-sm-4 lead-homebt"><a href="{{url_for('index') }}" class="signout">Signout</a></div>
+        <div class="col-sm-4"></div>
+         <div class="col-sm-4"><h2 class="lead-head">Bay Wash Studio</h2>
+
+        
+    </div>
+</div>
+
+<div class="container-fluid">
+    <div class="row no-gutters lead-backg">
+   <section>
+  <!--for demo wrap-->
+  <h1>Bookings</h1>
+  <div class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <thead>
+        <tr>
+          <th>ID #</th>
+          <th>First/Last Name</th>
+          <th>Date</th>
+          <th>Time</th>
+          <th>Telephone</th>
+          <th>Email</th>
+          <th>Service</th>
+        </tr>
+      </thead>
+    </table>
+  </div>
+  <div class="tbl-content">
+    <table cellpadding="0" cellspacing="0" border="0">
+      <tbody>
+        {% for item in booking_data %}
+        <tr>
+          <td>{{ item.BOOKING_ID}}</td>
+          <td>{{ item.CUSTOMER_NAME}}</td>
+          <td>{{ item.DATE}}</td>
+          <td>{{ item.TIME}}</td>
+          <td>{{ item.CUSTOMER_TELEPHONE}}</td>
+          <td>{{ item.CUSTOMER_EMAIL}}</td>
+          <td>{{ item.SERVICE_NAME}}</td>
+        </tr>
+        {% endfor %}
+       
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+
+    </div>
+</div>
+
+
+
+
+
+{% endblock %}
