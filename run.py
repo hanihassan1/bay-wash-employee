@@ -9,7 +9,11 @@ import pymysql
 app = Flask(__name__)
 
 connection = pymysql.connect(host='mydatabase.cccssd5sqciz.ca-central-1.rds.amazonaws.com',
-                          
+                            user='root',
+                            password='root1234',
+                            db='SALON',
+                            )
+
 app.secret_key = "its_secure"
 
 
@@ -19,7 +23,7 @@ app.secret_key = "its_secure"
 def index():
     
      if request.method=="POST":
-        print("test")
+        
         username = request.form['username'] + " " + request.form['password']
         print(username)
         return redirect(url_for('bookings'))
@@ -28,8 +32,11 @@ def index():
 
 
         
-@app.route('/bookings',methods=["GET", "POST"])
+@app.route('/bookings')
 def bookings():
+    try:
+     
+     result=""
      with connection.cursor(pymysql.cursors.DictCursor) as cursor:
           sql = """ SELECT BOOKINGS.BOOKING_ID, SERVICES.SERVICE_NAME, CUSTOMERS.CUSTOMER_NAME, 
           CUSTOMERS.CUSTOMER_EMAIL, CUSTOMERS.CUSTOMER_TELEPHONE,BOOKINGS.DATE, BOOKINGS.TIME FROM BOOKINGS 
@@ -37,8 +44,10 @@ def bookings():
           INNER JOIN SERVICES ON BOOKINGS.SERVICE_ID = SERVICES.SERVICE_ID; """
           cursor.execute(sql)
           result = cursor.fetchall()
-          print(result)
-
+          connection.commit()
+     cursor.close()
+     print(result)
+    finally:
      return render_template("bookings.html", title = "Bookings", booking_data=result)  
        
        
