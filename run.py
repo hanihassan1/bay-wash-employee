@@ -9,9 +9,9 @@ import pymysql
 app = Flask(__name__)
 
 connection = pymysql.connect(host='mydatabase.cccssd5sqciz.ca-central-1.rds.amazonaws.com',
-                            user='****',
-                            password='****',
-                            db='***',
+                            user='root',
+                            password='root1234',
+                            db='SALON',
                             )
 
 app.secret_key = "its_secure"
