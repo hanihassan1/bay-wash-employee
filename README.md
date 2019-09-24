@@ -1,4 +1,4 @@
-#Data centric development– Bay Wash Studio- Employee site.
+Data centric development– Bay Wash Studio- Employee site.
 Bay Wash Studio is a salon. 
 
 This is the employee site where they can view bookings for their salon.
@@ -11,7 +11,7 @@ Heroku –https://bay-wash-salon---employee.herokuapp.com/
 
 Link to Client site - https://bay-wash-studio.herokuapp.com/
 
-##Planning/Logic and resources:
+Planning/Logic and resources:
 JavaScript and jQuery were used. Mysql was used to write the queries..
 
  
@@ -86,7 +86,7 @@ zope.cachedescriptors==4.3.1
 
 
 
-##Features:
+Features:
 
 Staff of the salon can - signin.
                        - view client booking.
@@ -94,7 +94,7 @@ Staff of the salon can - signin.
                     
                     
 
-##Acknowledgements:
+Acknowledgements:
 
 I received inspiration from Salon websites.
 
