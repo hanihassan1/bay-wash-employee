@@ -9,9 +9,9 @@ import pymysql
 app = Flask(__name__)
 
 connection = pymysql.connect(host='mydatabase.cccssd5sqciz.ca-central-1.rds.amazonaws.com',
-                            user='root',
-                            password='root1234',
-                            db='SALON',
+                            user='****',
+                            password='****',
+                            db='*****',
                             )
 
 app.secret_key = "its_secure"
@@ -23,7 +23,6 @@ app.secret_key = "its_secure"
 def index():
     
      if request.method=="POST":
-        print("test")
         username = request.form['username'] + " " + request.form['password']
         print(username)
         return redirect(url_for('bookings'))
