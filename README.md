@@ -1,4 +1,5 @@
 Data centric development– Bay Wash Studio- Employee site.
+
 Bay Wash Studio is a salon. 
 
 This is the employee site where they can view bookings for their salon.
@@ -12,10 +13,12 @@ Heroku –https://bay-wash-salon---employee.herokuapp.com/
 Link to Client site - https://bay-wash-studio.herokuapp.com/
 
 Planning/Logic and resources:
+
 JavaScript and jQuery were used. Mysql was used to write the queries..
 
  
 Technologies:
+
 This website was developed using: HTML, CSS, Bootstrap, jQuery, JavaScript, Python3, Flask. Bootstrap theme was used, with my editions.
 
 Packages:
